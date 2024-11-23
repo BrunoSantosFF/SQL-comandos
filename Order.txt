@@ -1,0 +1,20 @@
+//====================// ORDER BY //====================//
+-- ORDER BY é usada para ordenar o conjunto em ordem crescente ou decrescente.
+
+-- SINTAXE:
+SELECT column1, column2, ...
+FROM table_name
+ORDER BY column1, column2, ... ASC|DESC;
+
+-- ira ordenar por preço
+SELECT * FROM Products ORDER BY Price;
+
+-- ordenando por ordem decrescente
+SELECT * FROM Products ORDER BY Price DESC;
+
+-- podemos ordenar por colunas também
+-- dando prioriadade para a primeira coluna e a segunda seria o desempate da primeira
+SELECT * FROM Customers ORDER BY Country, CustomerName;
+
+-- voce também pode escolher se vai ser descrescente ou crescente na ordenação
+SELECT * FROM Customers ORDER BY Country ASC, CustomerName DESC;
