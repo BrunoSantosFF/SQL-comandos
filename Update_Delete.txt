@@ -1,0 +1,29 @@
+//====================// UPDATE //====================//
+-- atualiza a tabela 
+
+-- SINTAXE: 
+UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;
+
+-- atualiza as colunas onde o ID é igual a 1
+UPDATE Customers
+SET ContactName = 'Alfred Schmidt', City= 'Frankfurt'
+WHERE CustomerID = 1;
+
+-- vai atualizar todos, sem precisar do WHERE
+UPDATE Customers SET ContactName='Juan';
+
+//====================// DELETE //====================//
+-- serve para deletar tabelas e linhas
+--SINTAXE:
+DELETE FROM table_name WHERE condition;
+
+-- exclui toda a linha que contenha CustomerName='Alfreds Futterkiste'
+DELETE FROM Customers WHERE CustomerName='Alfreds Futterkiste';
+
+-- deleta todas as linhas sem deletar a tabela
+DELETE FROM Customers;
+
+-- deleta a tabela por completo
+DROP TABLE Customers;
