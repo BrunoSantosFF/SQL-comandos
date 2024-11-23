@@ -14,3 +14,17 @@ SELECT COUNT(DISTINCT Country) FROM Customers;
 
 -- aqui voce vai conseguir contar e renoemar a coluna resultante como 'DistinctCountries'
 SELECT Count(*) AS DistinctCountries FROM (SELECT DISTINCT Country FROM Customers);
+
+//====================// SELECT  TOP//====================//
+-- seleciona as quantidades especificas do topo
+
+-- SINTAXE:
+SELECT TOP number|percent column_name(s)
+FROM table_name
+WHERE condition;
+
+-- seleciona os 3 primeiros
+SELECT * FROM Customers LIMIT 3;
+
+-- seleciona os 3 primeiros com country='Germany'
+SELECT * FROM Customers WHERE Country='Germany' LIMIT 3;
