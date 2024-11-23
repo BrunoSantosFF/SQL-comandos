@@ -26,5 +26,7 @@ WHERE condition;
 -- seleciona os 3 primeiros
 SELECT * FROM Customers LIMIT 3;
 
+SELECT TOP 3 Quantity FROM OrderDetails;
+
 -- seleciona os 3 primeiros com country='Germany'
 SELECT * FROM Customers WHERE Country='Germany' LIMIT 3;

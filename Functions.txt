@@ -1,0 +1,44 @@
+//====================// FUNCTIONS //====================//
+
+MIN() - retorna o menor valor da coluna selecionada
+MAX() - retorna o maior valor da coluna selecionada
+COUNT() - retorna o número de linhas em um conjunto
+SUM() - retorna a soma total de uma coluna numérica
+AVG() - retorna o valor médio de uma coluna numérica
+
+
+=============== MIN() ===============
+-- retorna o menor preço
+SELECT MIN(Price) FROM Products;
+
+=============== MAX() ===============
+-- retorna o maior preço
+SELECT MAX(Price) FROM Products;
+
+-- Dando nome a tabele resultante (nome do resultante = SmallestPrice)
+SELECT MIN(Price) AS SmallestPrice FROM Products;
+
+=============== COUNT()===============
+-- conta quantas linhas tem em Products
+SELECT COUNT(*) FROM Products;
+
+-- especificando a coluna
+SELECT COUNT(ProductName) FROM Products;
+
+-- ignorando duplicadas
+SELECT COUNT(DISTINCT Price) FROM Products;
+
+-- renomenando
+SELECT COUNT(*) AS [Number of records] FROM Products;
+
+=============== SUM() ===============
+-- soma os valores que tem na coluna Quantity
+SELECT SUM(Quantity) FROM OrderDetails;
+
+-- renomear
+SELECT SUM(Quantity) AS total FROM OrderDetails;
+
+=============== AVG() ===============
+-- calcula a media
+SELECT AVG(Price) FROM Products;
+
