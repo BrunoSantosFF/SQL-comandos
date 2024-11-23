@@ -1,0 +1,30 @@
+//====================// WHERE //====================//
+-- where serve como um filtro da sua escolha
+-- SINTAXE : 
+
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition;
+
+-- da tabela Customers ele vai filtrar somente quem tem Country='Mexico'
+SELECT * FROM Customers WHERE Country='Mexico';
+
+-- também é possivel usar outras operações 
+SELECT * FROM Customers WHERE CustomerID > 80;
+SELECT * FROM Customers WHERE CustomerID=1;
+-- pega o que for diferente de 18 (<> equivalente a !=, depende da versão)
+SELECT * FROM Products WHERE Price <> 18; 
+
+-- operação "between" que vai pegar os valores entre a condiçao
+-- nesse caso vai pegar o preço com valor entre 50 e 60 da tabela preço
+SELECT * FROM Products WHERE Price BETWEEN 50 AND 60;
+
+-- temos o "Like" que é usado para strings 
+-- 's%' pega tudo que começa com s
+-- '%s' pega tudo que termina com s
+-- '%s%' pega tudo que contém s
+SELECT * FROM Customers WHERE City LIKE 's%';
+
+-- operação "IN" que vai buscar tudo que esteja igual ao parametro
+-- vai buscar todas as cidades que sejam "London" ou "Paris"
+SELECT * FROM Customers WHERE City IN ('Paris','London');
