@@ -1,0 +1,19 @@
+//====================// Operadores //====================//
+
+//=== AND ===//
+-- é um "e"
+-- vai selecionar tudo que for da 'Spain' E o nome começa com 'G'
+SELECT * FROM Customers WHERE Country = 'Spain' AND CustomerName LIKE 'G%';
+
+//=== OR ===//
+-- seleciona países que são 'Spain' e começa com 'G' ou nomes que começam com 'R'
+SELECT * FROM Customers WHERE Country = 'Spain' AND CustomerName LIKE 'G%' OR CustomerName LIKE 'R%';
+
+//=== NOT ===//
+-- vai pegar tudo que nao for igual a condiçao 
+-- vai pegar todos países os que NÃO são 'Spain'
+SELECT * FROM Customers WHERE NOT Country = 'Spain';
+-- vai pegar todos os nome que NÃO começam com a letra "A"
+SELECT * FROM Customers WHERE CustomerName NOT LIKE 'A%';
+-- tudo que Não está entre 10 e 60
+SELECT * FROM Customers WHERE CustomerID NOT BETWEEN 10 AND 60;
