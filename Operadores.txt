@@ -17,3 +17,9 @@ SELECT * FROM Customers WHERE NOT Country = 'Spain';
 SELECT * FROM Customers WHERE CustomerName NOT LIKE 'A%';
 -- tudo que Não está entre 10 e 60
 SELECT * FROM Customers WHERE CustomerID NOT BETWEEN 10 AND 60;
+
+
+//=== NULL ===//
+-- null são os elementos sem valores
+-- pega todo endereço que é null 
+SELECT CustomerName, ContactName, Address FROM Customers WHERE Address IS NULL;
