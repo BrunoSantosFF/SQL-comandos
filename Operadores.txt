@@ -23,3 +23,45 @@ SELECT * FROM Customers WHERE CustomerID NOT BETWEEN 10 AND 60;
 -- null são os elementos sem valores
 -- pega todo endereço que é null 
 SELECT CustomerName, ContactName, Address FROM Customers WHERE Address IS NULL;
+
+//=== LIKE ===//
+-- temos o "Like" que é usado para strings 
+-- 's%' pega tudo que começa com s
+-- '%s' pega tudo que termina com s
+-- '%s%' pega tudo que contém s
+
+SELECT * FROM Customers WHERE City LIKE 's%';
+
+//=== Wildcard ===//
+-- retorna todos os clientes que começam com "a", "b", "c", "d", "e" ou "f":
+SELECT * FROM Customers WHERE CustomerName LIKE '[a-f]%';
+
+--Retorna todos os clientes que possuem "r" na segunda posição:
+SELECT * FROM Customers WHERE CustomerName LIKE '_r%';
+
+//=== IN ===//
+-- IN permite que você especifique vários valores em  WHERE.
+SELECT * FROM Customers WHERE Country IN ('Germany', 'France', 'UK');
+
+//=== BETWEEN ===//
+-- BETWEEN seleciona valores dentro de um intervalo dado. Os valores podem ser números, texto ou datas.
+SELECT * FROM Products WHERE Price BETWEEN 10 AND 20;
+
+-- com texto
+SELECT * FROM Products
+WHERE ProductName BETWEEN "Carnarvon Tigers" AND "Chef Anton's Cajun Seasoning"
+ORDER BY ProductName;
+
+//=== AS ===//
+-- renomear saidas
+SELECT ProductName AS "My Great Products" FROM Products;
+
+-- pode concatenar os resultados das colunas que vai renomear
+SELECT CustomerName, Address + ', ' + PostalCode + ' ' + City + ', ' + Country AS Address FROM Customers;
+
+SELECT CustomerName, CONCAT(Address,', ',PostalCode,', ',City,', ',Country) AS Address FROM Customers;
+
+-- criando outros titulos e usando seus atributos
+SELECT o.OrderID, o.OrderDate, c.CustomerName
+FROM Customers AS c, Orders AS o
+WHERE c.CustomerName='Around the Horn' AND c.CustomerID=o.CustomerID;
