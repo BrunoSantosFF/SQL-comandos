@@ -1,0 +1,16 @@
+//====================// SELECT //====================//
+-- vai selecionar todas as colunas da tabela Customers
+SELECT * FROM Customers;
+
+-- vai selecionar as colunas especificadas da tabela 
+SELECT CustomerName, City FROM Customers;
+
+-- seleciona todos os paises distintos da tabela Customers
+SELECT DISTINCT Country FROM Customers;
+
+-- como contar a quantidade de itens da coluna que deseja
+-- nesse caso está contando quantos paises distintos tem na coluna Country de Customers
+SELECT COUNT(DISTINCT Country) FROM Customers;
+
+-- aqui voce vai conseguir contar e renoemar a coluna resultante como 'DistinctCountries'
+SELECT Count(*) AS DistinctCountries FROM (SELECT DISTINCT Country FROM Customers);
