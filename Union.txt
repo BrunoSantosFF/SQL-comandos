@@ -1,0 +1,25 @@
+//================== UNION ================//
+UNION Syntax
+
+SELECT column_name(s) FROM table1
+UNION
+SELECT column_name(s) FROM table2;
+
+Se alguns clientes ou fornecedores tiverem a mesma cidade, cada cidade será listada apenas uma vez, porque UNION seleciona apenas valores distintos. Use UNION ALL para selecionar também valores duplicados!
+
+SELECT City FROM Customers
+UNION
+SELECT City FROM Suppliers
+ORDER BY City;
+
+SELECT City FROM Customers
+UNION ALL
+SELECT City FROM Suppliers
+ORDER BY City;
+
+SELECT City, Country FROM Customers
+WHERE Country='Germany'
+UNION ALL
+SELECT City, Country FROM Suppliers
+WHERE Country='Germany'
+ORDER BY City;
